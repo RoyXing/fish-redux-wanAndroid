@@ -1,3 +1,4 @@
+import 'package:fishreduxwanandroid/model/home/repos_model.dart';
 import 'package:fishreduxwanandroid/model/home/system_model.dart';
 import 'package:fishreduxwanandroid/route/route.dart';
 import 'package:fishreduxwanandroid/utils/utils.dart';
@@ -31,7 +32,8 @@ class NavigatorUtil {
     Navigator.pushReplacement(context, MaterialPageRoute(builder: (ctx) => page));
   }
 
-  static void pushWeb(BuildContext context, {String title, String titleId, String url, bool isHome: false}) {
+  static void pushWeb(BuildContext context,
+      {String title, String titleId, String url, ReposModel model, bool isHome: false}) {
     if (context == null || ObjectUtil.isEmpty(url)) return;
     if (url.endsWith(".apk")) {
       launchInBrowser(url, title: title ?? titleId);
@@ -41,6 +43,7 @@ class NavigatorUtil {
           "title": title,
           "titleId": titleId,
           "url": url,
+          'model': model,
         });
       }));
     }

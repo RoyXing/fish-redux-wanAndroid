@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fishreduxwanandroid/page/system/adapter/adapte.dart';
 import 'package:fishreduxwanandroid/widgets/keep_alive.dart';
 
 import 'effect.dart';
@@ -14,7 +15,10 @@ class SystemPage extends Page<SystemState, Map<String, dynamic>> {
           reducer: buildReducer(),
           view: buildView,
           wrapper: keepAliveWrapper,
-          dependencies: Dependencies<SystemState>(adapter: null, slots: <String, Dependent<SystemState>>{}),
+          dependencies: Dependencies<SystemState>(
+            adapter: NoneConn<SystemState>() + SystemItemAdapter(),
+            slots: <String, Dependent<SystemState>>{},
+          ),
           middleware: <Middleware<SystemState>>[],
         );
 }

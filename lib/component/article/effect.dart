@@ -13,7 +13,12 @@ Effect<ItemState> buildEffect() {
 }
 
 void _onAction(Action action, Context<ItemState> ctx) {
-  NavigatorUtil.pushWeb(ctx.context, title: ctx.state.model.title, url: ctx.state.model.link);
+  NavigatorUtil.pushWeb(
+    ctx.context,
+    title: ctx.state.model.title,
+    url: ctx.state.model.link,
+    model: ctx.state.model,
+  );
 }
 
 void _remove(Action action, Context<ItemState> ctx) {

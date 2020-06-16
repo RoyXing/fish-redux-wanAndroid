@@ -1,14 +1,15 @@
 import 'dart:ui';
 
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fishreduxwanandroid/component/tree/state.dart';
 import 'package:fishreduxwanandroid/global/state.dart';
 import 'package:fishreduxwanandroid/model/home/system_model.dart';
 import 'package:fishreduxwanandroid/utils/common.dart';
 import 'package:flutter_easyrefresh/easy_refresh.dart';
 
-class SystemState implements GlobalBaseState, Cloneable<SystemState> {
+class SystemState extends MutableSource implements GlobalBaseState, Cloneable<SystemState> {
   EasyRefreshController controller;
-  List<TreeModel> list;
+  List<TreeItemState> list;
   int loadStatus;
 
   @override
@@ -25,6 +26,24 @@ class SystemState implements GlobalBaseState, Cloneable<SystemState> {
 
   @override
   Color themeColor;
+
+  @override
+  Object getItemData(int index) {
+    return list[index];
+  }
+
+  @override
+  String getItemType(int index) {
+    return 'system';
+  }
+
+  @override
+  int get itemCount => list?.length ?? 0;
+
+  @override
+  void setItemData(int index, Object data) {
+    list[index] = data;
+  }
 }
 
 SystemState initState(Map<String, dynamic> args) {

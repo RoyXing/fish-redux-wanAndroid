@@ -1,9 +1,9 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fishreduxwanandroid/component/likebtn/component.dart';
 import 'package:fishreduxwanandroid/generated/i18n.dart';
 import 'package:fishreduxwanandroid/page/web/action.dart';
 import 'package:fishreduxwanandroid/utils/colors.dart';
 import 'package:fishreduxwanandroid/utils/styles.dart';
-import 'package:fishreduxwanandroid/widgets/likebtn/like_button.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -21,10 +21,7 @@ Widget buildView(WebScaffoldState state, Dispatch dispatch, ViewService viewServ
       ),
       centerTitle: true,
       actions: <Widget>[
-        LikeButton(
-          width: 56.0,
-          duration: Duration(milliseconds: 500),
-        ),
+        state.model == null ? Container() : viewService.buildComponent(LikeBtnComponent.path),
         new PopupMenuButton(
             padding: const EdgeInsets.all(0.0),
             onSelected: (value) {

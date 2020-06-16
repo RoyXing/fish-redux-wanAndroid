@@ -23,7 +23,13 @@ class ReposItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        NavigatorUtil.pushWeb(context,title: model.title, url: model.link, isHome: isHome);
+        NavigatorUtil.pushWeb(
+          context,
+          title: model.title,
+          url: model.link,
+          isHome: isHome,
+          model: model,
+        );
       },
       child: Container(
         height: 160.0,
@@ -56,7 +62,7 @@ class ReposItem extends StatelessWidget {
                     children: <Widget>[
                       LikeBtn(
                         id: model.originId ?? model.id,
-                        isLike: model.collect??false,
+                        isLike: model.collect ?? false,
                       ),
                       Gaps.hGap10,
                       Text(

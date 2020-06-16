@@ -1,19 +1,16 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fishreduxwanandroid/component/tree/state.dart';
 import 'package:fishreduxwanandroid/model/home/system_model.dart';
 
-enum SystemAction { updateData, onRefresh, onTabPage, updateStatus }
+enum SystemAction { updateData, onRefresh, updateStatus }
 
 class SystemActionCreator {
   static Action onRefresh() {
     return const Action(SystemAction.onRefresh);
   }
 
-  static Action updateData(List<TreeModel> list) {
+  static Action updateData(List<TreeItemState> list) {
     return Action(SystemAction.updateData, payload: list);
-  }
-
-  static Action onTabPage(TreeModel treeModel) {
-    return Action(SystemAction.onTabPage, payload: treeModel);
   }
 
   static Action updateStatus(int status) {

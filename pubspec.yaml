@@ -36,15 +36,14 @@ dependencies:
 
   fish_redux: ^0.3.4
   lpinyin: ^1.0.9
-#  flustars: ^0.3.2
   url_launcher: ^5.4.10
   cached_network_image: ^2.2.0+1
   webview_flutter: ^0.3.22+1
   azlistview: ^0.1.2
-  #  pull_to_refresh: ^1.5.8
   flutter_easyrefresh: ^2.1.1
   flukit: ^1.0.2
   fluttertoast: ^4.0.1
+  share: ^0.6.4+3
 
 
 dev_dependencies:

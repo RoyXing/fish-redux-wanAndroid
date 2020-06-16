@@ -1,5 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:fishreduxwanandroid/utils/navigator_util.dart';
+import 'package:share/share.dart';
 import 'action.dart';
 import 'state.dart';
 
@@ -15,12 +16,12 @@ void _onPopSelected(Action action, Context<WebScaffoldState> ctx) {
     case "browser":
       NavigatorUtil.launchInBrowser(ctx.state.url, title: ctx.state.title ?? "");
       break;
-    case "collection":
-
-      break;
     case "share":
+      Share.share('''
+      ${ctx.state.title}
+      ${ctx.state.url}
+      ''');
       break;
-
     default:
       break;
   }
