@@ -1,5 +1,5 @@
+import 'dart:async';
 import 'dart:io';
-import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,4 +16,9 @@ class Global {
       SystemChrome.setSystemUIOverlayStyle(systemUiOverlayStyle);
     }
   }
+
+  static Stream<Color> get themeStream => _streamController.stream.asBroadcastStream();
+
+  static StreamController<Color> get streamController => _streamController;
+  static StreamController<Color> _streamController = StreamController.broadcast();
 }

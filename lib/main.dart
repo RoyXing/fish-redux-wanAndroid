@@ -9,7 +9,7 @@ import 'config/global.dart';
 
 Future<Null> main() async {
   ErrorWidget.builder = (FlutterErrorDetails details) {
-    if (kDebugMode) {
+    if (kReleaseMode) {
       Zone.current.handleUncaughtError(details.exception, details.stack);
     } else {
       FlutterError.dumpErrorToConsole(details);
@@ -23,7 +23,8 @@ Future<Null> main() async {
       runApp(MainApp());
     });
   }, (error, stackTrace) async {
-    print('这是 runZonedGuarded中捕获的异常 ');
+    print("$error");
+    print('这是 runZonedGuarded中捕获的异常 ${stackTrace.toString()}');
 
     ///进行网络日志收集 或者在错误页面收集
     ///、、、、、

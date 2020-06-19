@@ -1,3 +1,4 @@
+import 'package:fishreduxwanandroid/config/global.dart';
 import 'package:fishreduxwanandroid/config/language_config.dart';
 import 'package:fishreduxwanandroid/generated/i18n.dart';
 import 'package:fishreduxwanandroid/global/store.dart';
@@ -18,6 +19,8 @@ class MainApp extends StatefulWidget {
 }
 
 class _AppState extends State<MainApp> {
+  Color _themeColor = Colours.app_main;
+
   @override
   void initState() {
     super.initState();
@@ -28,6 +31,12 @@ class _AppState extends State<MainApp> {
     }
     GlobalStore.store.dispatch(GlobalActionCreator.changeThemeColor(themeColor));
     I18n.onLocaleChanged = onLocalChanged;
+    Global.themeStream.listen((color) {
+      _themeColor = color;
+      setState(() {
+        print('switch theme $color');
+      });
+    });
   }
 
   void onLocalChanged(Locale locale) {
@@ -77,7 +86,8 @@ class _AppState extends State<MainApp> {
       title: 'WanAndroid',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: _themeColor,
+        accentColor: _themeColor,
         indicatorColor: Colors.white,
       ),
       home: routes.buildPage('splash', null),

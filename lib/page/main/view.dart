@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:fish_redux/fish_redux.dart';
 import 'package:fishreduxwanandroid/generated/i18n.dart';
 import 'package:fishreduxwanandroid/route/route.dart';
