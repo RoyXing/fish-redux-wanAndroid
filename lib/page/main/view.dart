@@ -11,7 +11,6 @@ import 'state.dart';
 
 Widget buildView(MainState state, Dispatch dispatch, ViewService viewService) {
   var i18n = I18n.of(viewService.context);
-
   List<_Page> _allPages = [
     _Page("home", i18n.titleHome),
     _Page("repos", i18n.titleRepos),

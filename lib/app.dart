@@ -12,12 +12,12 @@ import 'package:library_utils/library_utils.dart';
 import 'global/action.dart';
 import 'route/route.dart';
 
-class App extends StatefulWidget {
+class MainApp extends StatefulWidget {
   @override
   _AppState createState() => _AppState();
 }
 
-class _AppState extends State<App> {
+class _AppState extends State<MainApp> {
   @override
   void initState() {
     super.initState();
@@ -77,7 +77,7 @@ class _AppState extends State<App> {
       title: 'WanAndroid',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: GlobalStore.state.themeColor,
         indicatorColor: Colors.white,
       ),
       home: routes.buildPage('splash', null),

@@ -36,8 +36,7 @@ Widget buildView(SplashState state, Dispatch dispatch, ViewService viewService) 
         onTap: () {
           if (ObjectUtil.isEmpty(_splashModel.url)) return;
           dispatch(SplashActionCreator.onGoToMain());
-          NavigatorUtil.pushWeb(viewService.context,
-              title: _splashModel.title, url: _splashModel.url);
+          NavigatorUtil.pushWeb(viewService.context, title: _splashModel.title, url: _splashModel.url);
         },
         child: new Container(
           alignment: Alignment.center,

@@ -32,6 +32,8 @@ class I18n implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
+  /// "Crash"
+  String get titleCrash => "Crash";
   /// "Home"
   String get titleHome => "Home";
   /// "Repos"
@@ -102,6 +104,9 @@ class _I18n_en_US extends I18n {
 class _I18n_zh_CN extends I18n {
   const _I18n_zh_CN();
 
+  /// "崩溃页面"
+  @override
+  String get titleCrash => "崩溃页面";
   /// "主页"
   @override
   String get titleHome => "主页";

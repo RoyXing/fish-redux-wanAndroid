@@ -1,6 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:fishreduxwanandroid/component/likebtn/component.dart';
-import 'package:fishreduxwanandroid/generated/i18n.dart';
 import 'package:fishreduxwanandroid/page/web/action.dart';
 import 'package:fishreduxwanandroid/utils/colors.dart';
 import 'package:fishreduxwanandroid/utils/styles.dart';
@@ -10,7 +9,8 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'state.dart';
 
 Widget buildView(WebScaffoldState state, Dispatch dispatch, ViewService viewService) {
-  I18n i18n = I18n.of(viewService.context);
+  throw Exception('这是一个测试crash');
+
   return Scaffold(
     appBar: AppBar(
       backgroundColor: state.themeColor,
