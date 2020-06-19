@@ -77,7 +77,7 @@ class _AppState extends State<MainApp> {
       title: 'WanAndroid',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: GlobalStore.state.themeColor,
+        primarySwatch: Colors.blue,
         indicatorColor: Colors.white,
       ),
       home: routes.buildPage('splash', null),
