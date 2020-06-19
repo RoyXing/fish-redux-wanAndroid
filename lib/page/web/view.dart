@@ -9,8 +9,6 @@ import 'package:webview_flutter/webview_flutter.dart';
 import 'state.dart';
 
 Widget buildView(WebScaffoldState state, Dispatch dispatch, ViewService viewService) {
-  throw Exception('这是一个测试crash');
-
   return Scaffold(
     appBar: AppBar(
       backgroundColor: state.themeColor,
